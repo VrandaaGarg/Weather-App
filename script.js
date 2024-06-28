@@ -84,63 +84,63 @@ searchBtn.addEventListener("click",()=>{
         console.log(data2)
         
         // day 1
-        let fullFirstDate = data2.list[4].dt_txt;
+        let fullFirstDate = data2.list[2].dt_txt;
         let FirstdateOnly = fullFirstDate.split(' ')[0];
     
         firstDate.innerHTML = FirstdateOnly;
-        firstTemp.innerHTML=`${data2.list[4].main.temp}&deg;C`
-        firstMain.innerHTML=data2.list[4].weather[0].main;
-        firstHumidity.innerHTML=`Humidity: ${data2.list[4].main.humidity} %`;
-        firstWind.innerHTML=`Wind Speed: ${data2.list[4].wind.speed} km/hr`;
-        document.getElementById("day1Img").src=`./images/${data2.list[4].weather[0].icon}.png`
+        firstTemp.innerHTML=`${data2.list[2].main.temp}&deg;C`
+        firstMain.innerHTML=data2.list[2].weather[0].main;
+        firstHumidity.innerHTML=`Humidity: ${data2.list[2].main.humidity} %`;
+        firstWind.innerHTML=`Wind Speed: ${data2.list[2].wind.speed} km/hr`;
+        document.getElementById("day1Img").src=`./images/${data2.list[2].weather[0].icon}.png`
 
         // day2
 
-        let fullSecondDate = data2.list[12].dt_txt;
+        let fullSecondDate = data2.list[10].dt_txt;
         let SeconddateOnly = fullSecondDate.split(' ')[0];
     
         secondDate.innerHTML = SeconddateOnly;
-        secondTemp.innerHTML=`${data2.list[12].main.temp}&deg;C`
-        secondMain.innerHTML=data2.list[12].weather[0].main;
-        secondHumidity.innerHTML=`Humidity: ${data2.list[12].main.humidity} %`;
-        secondWind.innerHTML=`Wind Speed: ${data2.list[12].wind.speed} km/hr`;
-        document.getElementById("day1Img").src=`./images/${data2.list[12].weather[0].icon}.png`
+        secondTemp.innerHTML=`${data2.list[10].main.temp}&deg;C`
+        secondMain.innerHTML=data2.list[10].weather[0].main;
+        secondHumidity.innerHTML=`Humidity: ${data2.list[10].main.humidity} %`;
+        secondWind.innerHTML=`Wind Speed: ${data2.list[10].wind.speed} km/hr`;
+        document.getElementById("day2Img").src=`./images/${data2.list[10].weather[0].icon}.png`
 
         // day3
 
-        let fullThirdDate = data2.list[20].dt_txt;
+        let fullThirdDate = data2.list[18].dt_txt;
         let thirddateOnly = fullThirdDate.split(' ')[0];
     
         thirdDate.innerHTML = thirddateOnly;
-        thirdTemp.innerHTML=`${data2.list[20].main.temp}&deg;C`
-        thirdMain.innerHTML=data2.list[4].weather[0].main;
-        thirdHumidity.innerHTML=`Humidity: ${data2.list[20].main.humidity} %`;
-        thirdWind.innerHTML=`Wind Speed: ${data2.list[20].wind.speed} km/hr`
-        document.getElementById("day1Img").src=`./images/${data2.list[20].weather[0].icon}.png`
+        thirdTemp.innerHTML=`${data2.list[18].main.temp}&deg;C`
+        thirdMain.innerHTML=data2.list[18].weather[0].main;
+        thirdHumidity.innerHTML=`Humidity: ${data2.list[18].main.humidity} %`;
+        thirdWind.innerHTML=`Wind Speed: ${data2.list[18].wind.speed} km/hr`
+        document.getElementById("day3Img").src=`./images/${data2.list[18].weather[0].icon}.png`
 
         // day4
 
-        let fullfourthDate = data2.list[28].dt_txt;
+        let fullfourthDate = data2.list[26].dt_txt;
         let fourthdateOnly = fullfourthDate.split(' ')[0];
     
         forthDate.innerHTML = fourthdateOnly;
-        forthTemp.innerHTML=`${data2.list[28].main.temp}&deg;C`
-        forthMain.innerHTML=data2.list[28].weather[0].main;
-        forthHumidity.innerHTML=`Humidity: ${data2.list[28].main.humidity} %`;
-        forthWind.innerHTML=`Wind Speed: ${data2.list[28].wind.speed} km/hr`
-        document.getElementById("day1Img").src=`./images/${data2.list[28].weather[0].icon}.png`
+        forthTemp.innerHTML=`${data2.list[26].main.temp}&deg;C`
+        forthMain.innerHTML=data2.list[26].weather[0].main;
+        forthHumidity.innerHTML=`Humidity: ${data2.list[26].main.humidity} %`;
+        forthWind.innerHTML=`Wind Speed: ${data2.list[26].wind.speed} km/hr`
+        document.getElementById("day4Img").src=`./images/${data2.list[26].weather[0].icon}.png`
 
         // day5
 
-        let fullFifthDate = data2.list[36].dt_txt;
+        let fullFifthDate = data2.list[34].dt_txt;
         let FifthdateOnly = fullFifthDate.split(' ')[0];
     
         fifthDate.innerHTML = FifthdateOnly;
-        fifthTemp.innerHTML=`${data2.list[36].main.temp}&deg;C`
-        fifthMain.innerHTML=data2.list[36].weather[0].main;
-        fifthHumidity.innerHTML=`Humidity: ${data2.list[36].main.humidity} %`;
-        fifthWind.innerHTML=`Wind Speed: ${data2.list[36].wind.speed} km/hr`
-        document.getElementById("day1Img").src=`./images/${data2.list[36].weather[0].icon}.png`
+        fifthTemp.innerHTML=`${data2.list[34].main.temp}&deg;C`
+        fifthMain.innerHTML=data2.list[34].weather[0].main;
+        fifthHumidity.innerHTML=`Humidity: ${data2.list[34].main.humidity} %`;
+        fifthWind.innerHTML=`Wind Speed: ${data2.list[34].wind.speed} km/hr`
+        document.getElementById("day5Img").src=`./images/${data2.list[34].weather[0].icon}.png`
 
     }
     weekUpdates()
