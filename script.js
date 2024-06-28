@@ -5,7 +5,6 @@ let currentTemp=document.querySelector("#currentTemp");
 let cityText=document.querySelector("#City");
 let description=document.querySelector("#description")
 let main=document.querySelector("#main");
-let icon=document.querySelector("#icon")
 
 let todayBtn=document.querySelector("#todayBtn");
 let weekBtn=document.querySelector("#weekBtn")
@@ -19,35 +18,30 @@ let humidity=document.querySelector("#humidity");
 let pressure=document.querySelector("#pressure")
 
 let firstDate=document.querySelector("#first");
-let firstIcon=document.querySelector("#firstIcon")
 let firstTemp=document.querySelector("#firstTemp");
 let firstMain=document.querySelector("#firstMain");
 let firstHumidity=document.querySelector("#firstHumidity");
 let firstWind=document.querySelector("#firstWind")
 
 let secondDate=document.querySelector("#second");
-let secondIcon=document.querySelector("#secondIcon")
 let secondTemp=document.querySelector("#secondTemp");
 let secondMain=document.querySelector("#secondMain");
 let secondHumidity=document.querySelector("#secondHumidity");
 let secondWind=document.querySelector("#secondWind")
 
 let thirdDate=document.querySelector("#third");
-let thirdIcon=document.querySelector("#thirdIcon")
 let thirdTemp=document.querySelector("#thirdTemp");
 let thirdMain=document.querySelector("#thirdMain");
 let thirdHumidity=document.querySelector("#thirdHumidity");
 let thirdWind=document.querySelector("#thirdWind")
 
 let forthDate=document.querySelector("#forth");
-let forthIcon=document.querySelector("#forthIcon")
 let forthTemp=document.querySelector("#forthTemp");
 let forthMain=document.querySelector("#forthMain");
 let forthHumidity=document.querySelector("#forthHumidity");
 let forthWind=document.querySelector("#forthWind")
 
 let fifthDate=document.querySelector("#fifth");
-let fifthIcon=document.querySelector("#fifthIcon")
 let fifthTemp=document.querySelector("#fifthTemp");
 let fifthMain=document.querySelector("#fifthMain");
 let fifthHumidity=document.querySelector("#fifthHumidity");
@@ -64,26 +58,23 @@ searchBtn.addEventListener("click",()=>{
 
     const weatherForToday=async()=>{
         let response=await fetch(urlForCurrent);
+
+        if(!response.ok){
+            alert("Wrong input data.Pls try again !")
+        }
         let data=await response.json();
         console.log(data)
+        
         currentTemp.innerHTML=`${data.main.temp}&deg;C`;
         cityText.innerHTML=data.name
         description.innerHTML=data.weather[0].description;
         main.innerHTML=data.weather[0].main;
         
-        let condition=data.weather[0].main
-        if(condition=="Clouds"){
-            icon.innerHTML="&#x2601;"
-        }else if(condition=="Snow"){
-            icon.innerHTML="&#9731;"
-        }
 
+        document.getElementById('mainImage').src = `./images/${data.weather[0].icon}.png`;
         Wind.innerHTML=`${data.wind.speed}km/hr`
-        
         Visibility.innerHTML=`${data.visibility}m`
-
         humidity.innerHTML=`${data.main.humidity}%`;
-
         pressure.innerHTML=`${data.main.pressure}hPa`;
     }
 
@@ -100,7 +91,8 @@ searchBtn.addEventListener("click",()=>{
         firstTemp.innerHTML=`${data2.list[4].main.temp}&deg;C`
         firstMain.innerHTML=data2.list[4].weather[0].main;
         firstHumidity.innerHTML=`Humidity: ${data2.list[4].main.humidity} %`;
-        firstWind.innerHTML=`Wind Speed: ${data2.list[4].wind.speed} km/hr`
+        firstWind.innerHTML=`Wind Speed: ${data2.list[4].wind.speed} km/hr`;
+        document.getElementById("day1Img").src=`./images/${data2.list[4].weather[0].icon}.png`
 
         // day2
 
@@ -111,7 +103,8 @@ searchBtn.addEventListener("click",()=>{
         secondTemp.innerHTML=`${data2.list[12].main.temp}&deg;C`
         secondMain.innerHTML=data2.list[12].weather[0].main;
         secondHumidity.innerHTML=`Humidity: ${data2.list[12].main.humidity} %`;
-        secondWind.innerHTML=`Wind Speed: ${data2.list[12].wind.speed} km/hr`
+        secondWind.innerHTML=`Wind Speed: ${data2.list[12].wind.speed} km/hr`;
+        document.getElementById("day1Img").src=`./images/${data2.list[12].weather[0].icon}.png`
 
         // day3
 
@@ -123,6 +116,7 @@ searchBtn.addEventListener("click",()=>{
         thirdMain.innerHTML=data2.list[4].weather[0].main;
         thirdHumidity.innerHTML=`Humidity: ${data2.list[20].main.humidity} %`;
         thirdWind.innerHTML=`Wind Speed: ${data2.list[20].wind.speed} km/hr`
+        document.getElementById("day1Img").src=`./images/${data2.list[20].weather[0].icon}.png`
 
         // day4
 
@@ -134,6 +128,7 @@ searchBtn.addEventListener("click",()=>{
         forthMain.innerHTML=data2.list[28].weather[0].main;
         forthHumidity.innerHTML=`Humidity: ${data2.list[28].main.humidity} %`;
         forthWind.innerHTML=`Wind Speed: ${data2.list[28].wind.speed} km/hr`
+        document.getElementById("day1Img").src=`./images/${data2.list[28].weather[0].icon}.png`
 
         // day5
 
@@ -145,6 +140,7 @@ searchBtn.addEventListener("click",()=>{
         fifthMain.innerHTML=data2.list[36].weather[0].main;
         fifthHumidity.innerHTML=`Humidity: ${data2.list[36].main.humidity} %`;
         fifthWind.innerHTML=`Wind Speed: ${data2.list[36].wind.speed} km/hr`
+        document.getElementById("day1Img").src=`./images/${data2.list[36].weather[0].icon}.png`
 
     }
     weekUpdates()
